@@ -18,6 +18,7 @@ set cursorline
 
 set termguicolors
 
+" This is for tabbing
 set expandtab 
 set shiftwidth=4
 set tabstop=4 
@@ -68,3 +69,10 @@ endfunction
 
 set updatetime=300
 set cmdheight=2
+
+" remove trailing whitespaces
+autocmd BufWritePre     *.py : %s/\s\+$//e
+autocmd BufWritePre     *.rs : %s/\s\+$//e
+autocmd BufWritePre     *.c : %s/\s\+$//e
+autocmd BufWritePre     *.cpp : %s/\s\+$//e
+autocmd BufWritePre     *.java : %s/\s\+$//e
