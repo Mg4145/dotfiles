@@ -40,7 +40,8 @@ Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 colorscheme gruvbox
-set background=dark 
+highlight Normal guibg=none
+" set background=dark 
 
 if executable('rg')
 	let g:rg_derive_root='true'
