@@ -295,8 +295,7 @@ cursor_shape block
 #: robustly with the ever-changing sea of bugs that is Cocoa is too
 #: much effort.
 
-# url_color #0087bd
-url_color #9ece6a
+url_color #73daca
 # url_style curly
 
 #: The color and style for highlighting URLs on mouse-over. url_style
@@ -907,13 +906,15 @@ tab_powerline_style angled
 #: Template to use for active tabs, if not specified falls back to
 #: tab_title_template.
 
-active_tab_foreground   #3d59a1
-active_tab_background   #16161e
+active_tab_background #7aa2f7
+active_tab_foreground #1f2335
 active_tab_font_style   bold
-inactive_tab_foreground #787c99
-inactive_tab_background #16161e
+inactive_tab_background #292e42
+inactive_tab_foreground #545c7e
 inactive_tab_font_style bold
-tab_bar_background #101014
+tab_bar_background #1D202F
+
+# tab_bar_background #101014
 
 # active_tab_foreground   #000
 # active_tab_background   #eee
@@ -938,15 +939,15 @@ tab_bar_background #101014
 
 #: Color scheme {{{
 
-foreground #a9b1d6
-background #1a1b26
+foreground #c0caf5
+background #24283b
 
 # foreground  #ebdbb2
 # background  #272727 //Uncomment this for gruvbox
 
 #: The foreground and background colors
 
-background_opacity 0.90
+background_opacity 0.95
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1005,10 +1006,9 @@ background_opacity 0.90
 # selection_foreground #000000
 # selection_background #fffacd
 
-
 ##################################################################
-selection_foreground none
-selection_background #28344a
+selection_background #364A82
+selection_foreground #c0caf5
 ##################################################################
 
 #: The foreground and background colors for text selected with the
@@ -1023,7 +1023,7 @@ selection_background #28344a
 
 ##############################################################################
 # Black
-color0 #414868
+color0 #1D202F
 color8 #414868
 
 # Red
@@ -1031,8 +1031,8 @@ color1 #f7768e
 color9 #f7768e
 
 # Green
-color2  #73daca
-color10 #73daca
+color2  #9ece6a
+color10 #9ece6a
 
 # Yellow
 color3  #e0af68
@@ -1051,8 +1051,13 @@ color6  #7dcfff
 color14 #7dcfff
 
 # White
-color7  #c0caf5
+color7  #a9b1d6
 color15 #c0caf5
+
+# Extended color
+
+color16 #ff9e64
+color17 #db4b4b
 ##############################################################################
 
 #: The 256 terminal colors. There are 8 basic colors, each color has a
