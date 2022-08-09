@@ -1,28 +1,24 @@
-syntax on
-set nu 
-set noerrorbells
-set smartindent
-set nowrap
-set smartcase
-set incsearch
-set autoindent 
+let mapleader = " "                 " Set leader key to Space
 
-" set cursorline
-" set colorcolumn=80
+syntax on                           " Sets the syntax for coding
+set nu                              " Sets line numbers
+set guicursor=                      " Sets block cursor
+set noerrorbells visualbell t_vb=  " Turns off annoying error sounds
+set smartindent                     " Turns on smart indent for coding
+set nowrap                          " Prevents line wrapping
+set smartcase                       " This is for searching
+set incsearch                       " This is for searching
+set autoindent                      " Copy indent from current line
+set cursorline                      " Highlights current line you are on
+set cmdheight=2                     " Number of screen lines to use for cli 
+set termguicolors                   " Enables 24-bit RGB color
+set colorcolumn=80                  " Highlights max line length
+set updatetime=300                  " Length of time after you stop typing
+set signcolumn=yes                  " Always show the signcolumn
+set expandtab                       " Converts tabs to spaces
+set shiftwidth=2                    " Levels of indendation 
+set tabstop=2                       " How many columns wide a tab char is worth
+set softtabstop=2                   " How much whitespace added/removed 
 
-set expandtab 
-se shiftwidth=4
-set tabstop=4
-set softtabstop=4
-
-if executable('rg')
-    let g:rg_derive_root='true'
-endif 
-
-set noerrorbells visualbell t_vb=
-if has('autocmd')
-    autocmd GUIEnter * set visualbell t_vb=
-endif
-
-set background=dark
-colorscheme torte
+set background=dark                 " Sets the background to dark 
+colorscheme torte                   " The bets colorscheme found
