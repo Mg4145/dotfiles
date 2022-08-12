@@ -24,4 +24,4 @@ alias carun="cargo build && cargo run"                # For Rust
 alias icat='kitty +kitten icat'                       # For the kitty terminal
 alias d="kitty +kitten diff"                          # For the kitty terminal
 alias gitu="git add . && git commit && git push"      # For git 
-# alias discord='discord --no-sandbox'                  # For arch linux
+# alias discord='discord --no-sandbox'                # For arch linux

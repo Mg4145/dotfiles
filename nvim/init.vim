@@ -48,7 +48,7 @@ call plug#end()
 " :CocInstall coc-tsserver coc-sqlfluff coc-sql coc-rust-analyzer coc-rls 
 " coc-pyright coc-pydocstring coc-json coc-java coc-snippets coc-go coc-clangd 
 " 
-" pip install pynvim flake8 autopep8
+" pip install pynvim flake8 autopep8 rope
 " :CocCommand pydocstring.install
 
 
