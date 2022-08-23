@@ -43,6 +43,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-syntastic/syntastic'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " :CocInstall coc-tsserver coc-sqlfluff coc-sql coc-rust-analyzer coc-rls
@@ -64,10 +66,11 @@ colorscheme tokyonight              " gruvbox
 highlight Normal guibg=none
 set background=dark
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline
+let g:airline_theme='tomorrow'      " gruvbox
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " This is for the undotree keybind
 nnoremap <F5> :UndotreeToggle<CR>
