@@ -14,15 +14,15 @@ set undodir=~/.vim/undodir          " Sets undodir to folder
 set undofile                        " Return the name of the undo file
 set autoindent                      " Copy indent from current line
 set cursorline                      " Highlights current line you are on
-set cmdheight=2                     " Number of screen lines to use for cli 
+set cmdheight=2                     " Number of screen lines to use for cli
 set termguicolors                   " Enables 24-bit RGB color
 set colorcolumn=80                  " Highlights max line length
 set updatetime=50                   " Length of time after you stop typing
 set signcolumn=yes                  " Always show the signcolumn
 set expandtab                       " Converts tabs to spaces
-set shiftwidth=2                    " Levels of indendation 
+set shiftwidth=2                    " Levels of indendation
 set tabstop=2                       " How many columns wide a tab char is worth
-set softtabstop=2                   " How much whitespace added/removed 
+set softtabstop=2                   " How much whitespace added/removed
 
 
 " Remove trailing whitespace
@@ -45,9 +45,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
-" :CocInstall coc-tsserver coc-sqlfluff coc-sql coc-rust-analyzer coc-rls 
-" coc-pyright coc-pydocstring coc-json coc-java coc-snippets coc-go coc-clangd 
-" 
+" :CocInstall coc-tsserver coc-sqlfluff coc-sql coc-rust-analyzer coc-rls
+" coc-pyright coc-pydocstring coc-json coc-java coc-snippets coc-go coc-clangd
+"
 " pip install pynvim flake8 autopep8 rope
 " :CocCommand pydocstring.install
 
@@ -61,7 +61,7 @@ let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
 colorscheme tokyonight              " gruvbox
-highlight Normal guibg=none 
+highlight Normal guibg=none
 set background=dark
 
 " Add (Neo)Vim's native statusline support.
