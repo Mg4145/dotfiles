@@ -1,4 +1,7 @@
 let mapleader = " "                 " Set leader key to Space
+let maplocalleader = " "            " Set local leader key to Space
+
+filetype plugin indent on
 
 syntax on                           " Sets the syntax for coding
 set nu                              " Sets line numbers
@@ -23,14 +26,17 @@ set expandtab                       " Converts tabs to spaces
 set shiftwidth=2                    " Levels of indendation
 set tabstop=2                       " How many columns wide a tab char is worth
 set softtabstop=2                   " How much whitespace added/removed
+" set spell spelllang=en_us         " Spell check (turn on with :set spell)
 
 
 " Remove trailing whitespace
-autocmd BufWritePre     *.py : %s/\s\+$//e
-autocmd BufWritePre     *.rs : %s/\s\+$//e
-autocmd BufWritePre     *.c : %s/\s\+$//e
-autocmd BufWritePre     *.cpp : %s/\s\+$//e
-autocmd BufWritePre     *.java : %s/\s\+$//e
+autocmd BufWritePre     *.py : %s/\s\+$//e  " Remove trailing whitespace python
+autocmd BufWritePre     *.rs : %s/\s\+$//e  " Remove trailing whitespace rust
+autocmd BufWritePre     *.c : %s/\s\+$//e   " Remove trailing whitespace c
+autocmd BufWritePre     *.cpp : %s/\s\+$//e " Remove trailing whitespace cpp
+autocmd BufWritePre     *.java : %s/\s\+$//e " Remove trailing whitespace java
+autocmd BufWritePre     *.txt : %s/\s\+$//e  " Remove trailing whitespace txt
+autocmd BufWritePre     *.tex : %s/\s\+$//e  " Remove trailing whitespace tex
 
 " Plugins using Vim-Plug see GitHub for more information
 call plug#begin('~/.vim/plugged')
@@ -45,8 +51,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'lervag/vimtex'
+    Plug 'SirVer/ultisnips' 
+    Plug 'github/copilot.vim'
+    " Plug 'vim-latex/vim-latex'
 call plug#end()
 
+" Run this command to install plugins as well as pip to install python 
+" dependencies
+"
+" :PlugInstall
 " :CocInstall coc-tsserver coc-sqlfluff coc-sql coc-rust-analyzer coc-rls
 " coc-pyright coc-pydocstring coc-json coc-java coc-snippets coc-go coc-clangd
 "
@@ -62,12 +76,12 @@ let g:tokyonight_italic_keywords = 1
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
-colorscheme tokyonight              " gruvbox
+colorscheme tokyonight      " gruvbox
 highlight Normal guibg=none
 set background=dark
 
 set statusline
-let g:airline_theme='tomorrow'      " gruvbox
+let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
@@ -205,3 +219,12 @@ let g:mkdp_filetypes = ['markdown']
 " set default theme (dark or light)
 " By default the theme is define according to the preferences of the system
 let g:mkdp_theme = 'dark'
+
+let g:vimtex_view_method = 'zathura'
+let g:livepreview_previewer = 'zathura'
+
+" Ultisnips settings 
+let g:UltiSnipsExpandTrigger = '<Nop>' " Don't change this otherwise Ultisnips will not work
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltisnipsSnippetDirectories = ['UltiSnips']
