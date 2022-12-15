@@ -14,15 +14,15 @@ set undodir=~/.vim/undodir          " Sets undodir to folder
 set undofile                        " Return the name of the undo file
 set autoindent                      " Copy indent from current line
 set cursorline                      " Highlights current line you are on
-set cmdheight=2                     " Number of screen lines to use for cli 
+set cmdheight=2                     " Number of screen lines to use for cli
 set termguicolors                   " Enables 24-bit RGB color
 set colorcolumn=80                  " Highlights max line length
 set updatetime=100                  " Length of time after you stop typing
 set signcolumn=yes                  " Always show the signcolumn
 set expandtab                       " Converts tabs to spaces
-set shiftwidth=2                    " Levels of indendation 
+set shiftwidth=2                    " Levels of indendation
 set tabstop=2                       " How many columns wide a tab char is worth
-set softtabstop=2                   " How much whitespace added/removed 
+set softtabstop=2                   " How much whitespace added/removed
 
 
 " Remove trailing whitespace
@@ -39,7 +39,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-utils/vim-man'
     Plug 'mbbill/undotree'
     Plug 'https://github.com/ycm-core/YouCompleteMe.git'
-    Plug 'https://github.com/junegunn/fzf.git' 
+    Plug 'https://github.com/junegunn/fzf.git'
     Plug 'vim-syntastic/syntastic'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -54,7 +54,7 @@ let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
 colorscheme tokyonight              " gruvbox
-highlight Normal guibg=none 
+highlight Normal guibg=none
 set background=dark
 
 " This is for the undotree keybind
@@ -62,4 +62,4 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 if executable('rg')
 	let g:rg_derive_root='true'
-endif 
+endif
