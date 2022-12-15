@@ -30,34 +30,36 @@ set softtabstop=2                   " How much whitespace added/removed
 
 
 " Remove trailing whitespace
-autocmd BufWritePre     *.py : %s/\s\+$//e  " Remove trailing whitespace python
-autocmd BufWritePre     *.rs : %s/\s\+$//e  " Remove trailing whitespace rust
-autocmd BufWritePre     *.c : %s/\s\+$//e   " Remove trailing whitespace c
-autocmd BufWritePre     *.cpp : %s/\s\+$//e " Remove trailing whitespace cpp
-autocmd BufWritePre     *.java : %s/\s\+$//e " Remove trailing whitespace java
-autocmd BufWritePre     *.txt : %s/\s\+$//e  " Remove trailing whitespace txt
-autocmd BufWritePre     *.tex : %s/\s\+$//e  " Remove trailing whitespace tex
+autocmd BufWritePre     *.c : %s/\s\+$//e     " Remove trailing whitespace c
+autocmd BufWritePre     *.cpp : %s/\s\+$//e   " Remove trailing whitespace c++
+autocmd BufWritePre     *.java : %s/\s\+$//e  " Remove trailing whitespace java
+autocmd BufWritePre     *.py : %s/\s\+$//e    " Remove trailing whitespace python
+autocmd BufWritePre     *.rs : %s/\s\+$//e    " Remove trailing whitespace rust
+autocmd BufWritePre     *.tex : %s/\s\+$//e   " Remove trailing whitespace tex
+autocmd BufWritePre     *.txt : %s/\s\+$//e   " Remove trailing whitespace txt
+autocmd BufWritePre     *.vim : %s/\s\+$//e   " Remove trailing whitespace vim
+autocmd BufWritePre     *.vimrc : %s/\s\+$//e " Remove trailing whitespace vimrc
 
 " Plugins using Vim-Plug see GitHub for more information
 call plug#begin('~/.vim/plugged')
-    Plug 'morhetz/gruvbox'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'tpope/vim-fugitive'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'mbbill/undotree'
-    Plug 'vim-syntastic/syntastic'
+    Plug 'SirVer/ultisnips'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'github/copilot.vim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+    Plug 'lervag/vimtex'
+    Plug 'mbbill/undotree'
+    Plug 'morhetz/gruvbox'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'tpope/vim-fugitive'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'lervag/vimtex'
-    Plug 'SirVer/ultisnips' 
-    Plug 'github/copilot.vim'
+    Plug 'vim-syntastic/syntastic'
     " Plug 'vim-latex/vim-latex'
 call plug#end()
 
-" Run this command to install plugins as well as pip to install python 
+" Run this command to install plugins as well as pip to install python
 " dependencies
 "
 " :PlugInstall
@@ -76,7 +78,7 @@ let g:tokyonight_italic_keywords = 1
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
-colorscheme tokyonight      " gruvbox
+colorscheme tokyonight    " gruvbox
 highlight Normal guibg=none
 set background=dark
 
@@ -223,7 +225,7 @@ let g:mkdp_theme = 'dark'
 let g:vimtex_view_method = 'zathura'
 let g:livepreview_previewer = 'zathura'
 
-" Ultisnips settings 
+" Ultisnips settings
 let g:UltiSnipsExpandTrigger = '<Nop>' " Don't change this otherwise Ultisnips will not work
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
