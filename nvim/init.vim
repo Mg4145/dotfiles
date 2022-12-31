@@ -4,7 +4,7 @@ let maplocalleader = " "            " Set local leader key to Space
 filetype plugin indent on
 
 syntax on                           " Sets the syntax for coding
-set nu                              " Sets line numbers
+set number relativenumber           " Sets line numbers
 set guicursor=                      " Sets block cursor
 set noerrorbells visualbell t_vb=   " Turns off annoying error sounds
 set smartindent                     " Turns on smart indent for coding
@@ -30,32 +30,32 @@ set softtabstop=2                   " How much whitespace added/removed
 
 
 " Remove trailing whitespace
-autocmd BufWritePre     *.c : %s/\s\+$//e     " Remove trailing whitespace c
-autocmd BufWritePre     *.cpp : %s/\s\+$//e   " Remove trailing whitespace c++
-autocmd BufWritePre     *.java : %s/\s\+$//e  " Remove trailing whitespace java
-autocmd BufWritePre     *.py : %s/\s\+$//e    " Remove trailing whitespace python
-autocmd BufWritePre     *.rs : %s/\s\+$//e    " Remove trailing whitespace rust
-autocmd BufWritePre     *.tex : %s/\s\+$//e   " Remove trailing whitespace tex
-autocmd BufWritePre     *.txt : %s/\s\+$//e   " Remove trailing whitespace txt
-autocmd BufWritePre     *.vim : %s/\s\+$//e   " Remove trailing whitespace vim
-autocmd BufWritePre     *.vimrc : %s/\s\+$//e " Remove trailing whitespace vimrc
+autocmd BufWritePre     *.c : %s/\s\+$//e   " Remove trailing whitespace c
+autocmd BufWritePre     *.cpp : %s/\s\+$//e " Remove trailing whitespace cpp
+autocmd BufWritePre     *.java : %s/\s\+$//e " Remove trailing whitespace java
+autocmd BufWritePre     *.py : %s/\s\+$//e  " Remove trailing whitespace python
+autocmd BufWritePre     *.rs : %s/\s\+$//e  " Remove trailing whitespace rust
+autocmd BufWritePre     *.tex : %s/\s\+$//e  " Remove trailing whitespace tex
+autocmd BufWritePre     *.txt : %s/\s\+$//e  " Remove trailing whitespace txt
+autocmd BufWritePre     *.vim : %s/\s\+$//e  " Remove trailing whitespace tex
+autocmd BufWritePre     *.vimrc : %s/\s\+$//e  " Remove trailing whitespace tex
 
 " Plugins using Vim-Plug see GitHub for more information
 call plug#begin('~/.vim/plugged')
-    Plug 'SirVer/ultisnips'
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    Plug 'github/copilot.vim'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-    Plug 'lervag/vimtex'
-    Plug 'mbbill/undotree'
     Plug 'morhetz/gruvbox'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-lua/plenary.nvim'
     Plug 'tpope/vim-fugitive'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'mbbill/undotree'
+    " Plug 'vim-syntastic/syntastic'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'vim-syntastic/syntastic'
+    Plug 'lervag/vimtex'
+    Plug 'SirVer/ultisnips'
+    Plug 'github/copilot.vim'
     " Plug 'vim-latex/vim-latex'
 call plug#end()
 
@@ -78,7 +78,7 @@ let g:tokyonight_italic_keywords = 1
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
-colorscheme tokyonight    " gruvbox
+colorscheme tokyonight
 highlight Normal guibg=none
 set background=dark
 
@@ -230,3 +230,11 @@ let g:UltiSnipsExpandTrigger = '<Nop>' " Don't change this otherwise Ultisnips w
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltisnipsSnippetDirectories = ['UltiSnips']
+
+" lua require('lua.basic')
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+vnoremap J   :m '>+1<CR>gv=gv
+vnoremap K   :m '<-2<CR>gv=gv
