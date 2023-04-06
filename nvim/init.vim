@@ -39,6 +39,7 @@ autocmd BufWritePre     *.tex : %s/\s\+$//e  " Remove trailing whitespace tex
 autocmd BufWritePre     *.txt : %s/\s\+$//e  " Remove trailing whitespace txt
 autocmd BufWritePre     *.vim : %s/\s\+$//e  " Remove trailing whitespace tex
 autocmd BufWritePre     *.vimrc : %s/\s\+$//e  " Remove trailing whitespace tex
+autocmd BufWritePre     *.md : %s/\s\+$//e  " Remove trailing whitespace MD
 
 " Plugins using Vim-Plug see GitHub for more information
 call plug#begin('~/.vim/plugged')
